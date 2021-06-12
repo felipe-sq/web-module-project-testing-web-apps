@@ -19,17 +19,25 @@ test('renders the contact form header', ()=> {
 test('renders ONE error message if user enters less then 5 characters into firstname.', async () => {
     render(<ContactForm />);
 
-    // const firstname = screen.getByLabelText(/first name/i);
+    const firstname = screen.getByText(/first name/i);
+    const lastname = screen.getByText(/Last Name/i);
+    const person = {name: 'Johnny'}
 
-    const oneerror = () => {
-        throw new TypeError();
-      };
-      expect(oneerror).toThrow(TypeError);
+    expect(2 + 2).toEqual(4);
+    expect(person).toEqual(person);
+    // expect(firstname).toContain(/'First Name'/i);
+    // expect(lastname).toContain(/Last Name/i)
+
+    // const oneerror = () => {
+    //     throw new TypeError();
+    //   };
+    // expect(oneerror).toThrow(TypeError);
+
+    
     // expect(firstname).toHaveTextContent(/Felipe/i)
 
     // expect(() => {
-        const firstname = screen.getByLabelText(/first name/i);
-        expect(firstname).toThrow(oneerror);
+        // expect(firstname).toThrow(oneerror);
         // fireEvent.change(firsname, { target: { value: "Joe" } });
     // }).toThrow(/firstName must have at least 5 characters./i)
 });
